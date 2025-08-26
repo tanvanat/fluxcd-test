@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: example-app-1:0.0.1
+          image: docker.io/tanvanat/example-app-1:0.0.2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
