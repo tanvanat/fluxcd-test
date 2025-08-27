@@ -6,13 +6,14 @@ metadata:
 spec:
   interval: 1m
   approvePlan: auto
-  path: ./openstack
+  path: ./kubernetes/fluxcd/repositories/infra-repo/openstack   # <== แก้ตรงนี้ให้ตรงตำแหน่งจริง
   sourceRef:
     kind: GitRepository
-    name: infra-repo           # ตามที่คุณมีแล้ว
+    name: infra-repo
     namespace: flux-system
   runnerPodTemplate:
-    envFrom:
-      - secretRef:
-          name: ncs-openstack-cred
+    spec:
+      envFrom:
+        - secretRef:
+            name: ncs-openstack-cred
 
